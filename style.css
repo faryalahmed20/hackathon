@@ -1,0 +1,239 @@
+/* Root Variables */
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --success: #4cc9f0;
+    --danger: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f8fafc;
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Auth Form Styling */
+#auth {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#auth input {
+    padding: 0.875rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: var(--transition);
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+/* Focus State */
+#auth input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    outline: none;
+    background: #ffffff;
+}
+
+/* Button Style */
+#auth button {
+    width: 100%;
+    padding: 0.875rem;
+    font-weight: 600;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: transform 0.2s, background 0.3s;
+    cursor: pointer;
+}
+
+/* Hover Effect on Button */
+#auth button:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+/* Task Board Section */
+#task-board {
+    max-width: 1440px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Grid Layout for Task Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Column for Task */
+.column {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #f1f5f9;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Task Cards */
+.task {
+    background: white;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+}
+
+.task[data-priority="High"] { border-color: #ef4444; }
+.task[data-priority="Medium"] { border-color: #f59e0b; }
+.task[data-priority="Low"] { border-color: #10b981; }
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.task-title {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+
+.task-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-top: 1rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Modern Form Elements */
+.task-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.task-form input,
+.task-form select {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 0.9375rem;
+    background-color: #f8fafc;
+    transition: var(--transition);
+}
+
+/* Focus and Hover for Form Inputs */
+.task-form input:focus,
+.task-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Form Button */
+.task-form button {
+    grid-column: span 2;
+    background: var(--primary);
+    padding: 0.875rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Button Hover Effect */
+.task-form button:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+/* Badge Styling */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 20px;
+    background: #e2e8f0;
+}
+
+/* Utility Button Styling */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .board {
+        grid-template-columns: 1fr;
+    }
+
+    .task-form {
+        grid-template-columns: 1fr;
+    }
+
+    .task-form button {
+        grid-column: span 1;
+    }
+}
